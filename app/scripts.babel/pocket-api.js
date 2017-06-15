@@ -16,15 +16,15 @@ const options = {
 
 const composeOptions = (body) => Object.assign({}, options, {body})
 
-const getRequestToken = () => {
-  const body = `consumer_key=${consumerKey}&redirect_uri=pocketapp1234:authorizationFinished`
-  return fetch(api.request, composeOptions(body)).then(r => r.json())
-}
-
-const getAccessToken = (requestToken) => {
-  const body = `consumer_key=${consumerKey}&code=${requestToken}&redirect_uri=pocketapp1234:authorizationFinished`
-  return fetch(api.authorize, composeOptions(body)).then(r => r.json())
-}
+// const getRequestToken = () => {
+//   const body = `consumer_key=${consumerKey}&redirect_uri=my-app:authorizationFinished`
+//   return fetch(api.request, composeOptions(body)).then(r => r.json())
+// }
+//
+// const getAccessToken = (requestToken) => {
+//   const body = `consumer_key=${consumerKey}&code=${requestToken}&redirect_uri=my-app:authorizationFinished`
+//   return fetch(api.authorize, composeOptions(body)).then(r => r.json())
+// }
 
 const addReadTag = (item_id, accessToken) => {
 
